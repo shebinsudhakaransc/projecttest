@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Credentials</title>
+</head>
+<body>
+    <h1>Welcome! Please enter your credentials.</h1>
+    <form id="credentialsForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Stored credentials:</h2>
+    <p id="storedCredentials"></p>
+
+    <script>
+        document.getElementById('credentialsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Display the stored credentials (for demonstration purposes)
+            const storedCredentials = `Username: ${username}<br>Password: ${password}`;
+            document.getElementById('storedCredentials').innerHTML = storedCredentials;
+
+            // In a real application, you should handle the credentials securely.
+        });
+    </script>
+</body>
+</html>
